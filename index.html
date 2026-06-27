@@ -1,97 +1,81 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fúngiko - Pan de Masa Madre Artesanal en Castro</title>
+    <title>Fúngiko - Pan Artesanal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* RESET */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; overflow-x: hidden; cursor: none; background-color: #faf8f5; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #3e2723; }
+        body { font-family: 'Segoe UI', sans-serif; color: #3e2723; background-color: #faf8f5; }
 
+        /* HEADER */
         header {
-            position: fixed; top: 0; width: 100%;
+            position: fixed; top: 0; width: 100%; height: 60px;
+            padding: 5px 10px; background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
-            padding: 10px 40px; background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(5px); box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000;
         }
-        .logo-header { max-width: 120px; }
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin: 0 10px; }
+        .logo-header { width: 30px; }
+        nav ul { display: flex; list-style: none; gap: 5px; justify-content: center; }
         nav ul li a { 
-            display: block; background: #fff; padding: 10px 20px;
-            border-radius: 20px; text-decoration: none; color: #3e2723;
-            font-weight: bold; border: 1px solid #e0d4c3;
-            transition: all 0.3s ease;
+            padding: 5px 8px; border-radius: 15px; text-decoration: none; 
+            color: #3e2723; font-weight: bold; border: 1px solid #e0d4c3; 
+            font-size: 0.6rem; white-space: nowrap; cursor: pointer;
         }
-        nav ul li a:hover { background: #d84315; color: #fff; transform: translateY(-2px); }
 
+        /* HERO */
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('pan-fondo.png');
-            background-size: cover; background-position: center;
-            height: 100vh; width: 100vw;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; color: #fff;
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: #fff; padding: 20px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('pan-fondo.png') center/cover;
         }
-        .hero h1 { font-size: 4rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); } /* Título reducido */
-        .hero p { font-size: 2rem; margin-bottom: 30px; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1rem; margin-bottom: 20px; }
+        .btn-whatsapp { 
+            background: #d84315; color: #fff; padding: 12px 25px; border-radius: 25px; 
+            text-decoration: none; font-size: 0.9rem; font-weight: bold; cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .btn-whatsapp:hover { transform: scale(1.05); }
 
-        .content-section { max-width: 900px; margin: 40px auto; padding: 60px; text-align: center; }
-        
-        .contenedor-productos { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 30px; gap: 20px; }
+        /* SECCIONES Y PRODUCTOS */
+        .content-section { max-width: 800px; margin: 0 auto; padding: 40px 15px; text-align: center; }
+        .contenedor-productos { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
         .producto-card {
-            background: #fff; 
-            border: 2px solid rgb(220, 85, 43); /* MARGEN DE COLOR AGREGADO */
-            border-radius: 12px; 
-            padding: 30px; 
-            width: 45%; 
-            min-width: 280px;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: #fff; border: 1px solid #d84315; border-radius: 10px;
+            padding: 15px; width: 45%; transition: transform 0.3s; cursor: pointer;
         }
-        .producto-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 20px rgba(0,0,0,0.15); }
-        
-        .contacto-card {
-            background: #fff; border: 1px solid #e0d4c3; border-radius: 20px;
-            padding: 40px; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            width: 100%; max-width: 600px;
-            border: 2px solid rgb(220, 85, 43);
-        }
-        .contacto-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 20px rgba(0,0,0,0.15); }
-        .contacto-item { margin: 15px 0; font-size: 1.3rem; }
-        
-        .btn-whatsapp { display: inline-block; background-color: #d84315; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 35px; font-weight: bold; transition: transform 0.3s; }
-        .btn-whatsapp:hover { transform: scale(1.1); }
-        
-        footer { background-color: #5d4037; color: #d7ccc8; text-align: center; padding: 30px; }
-        .cursor { width: 20px; height: 20px; border: 2px solid #d84315; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; }
+        .producto-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .producto-card h3 { font-size: 0.7rem; margin-bottom: 5px; }
+        .producto-card p { font-size: 0.6rem; }
 
-        @media (max-width: 768px) {
-    /* El header se vuelve vertical o más compacto */
-    header { padding: 10px; flex-direction: column; }
-    .logo-header { max-width: 80px; margin-bottom: 10px; }
-    
-    /* El menú se ajusta para que no se desborde */
-    nav ul { flex-wrap: wrap; justify-content: center; }
-    nav ul li { margin: 5px; }
-    
-    /* Las cards de productos pasan de lado a lado (100% de ancho) */
-    .producto-card { width: 95% !important; }
-    
-    /* El título de la hero se achica para que no se corte */
-    .hero h1 { font-size: 2.5rem !important; }
-    .hero p { font-size: 1.2rem !important; }
-    
-    /* Sección contacto más ajustada */
-    .contacto-card { width: 90% !important; }
-}
+        .contacto-card { background: #fff; border: 1px solid #d84315; border-radius: 10px; padding: 20px; width: 90%; max-width: 300px; margin: 0 auto; }
+        
+        /* FOOTER CON LOGOS INFERIORES */
+        .footer-container { 
+            padding: 30px 20px; text-align: center; 
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo-footer { width: 30px; opacity: 0.7; }
+        .footer-text { font-size: 0.6rem; color: #8d6e63; }
+
+        /* PC RESPONSIVE */
+        @media (min-width: 768px) {
+            .logo-header, .logo-footer { width: 50px; }
+            nav ul li a { font-size: 1rem; padding: 10px 20px; }
+            .hero h1 { font-size: 5rem; }
+            .producto-card { width: 300px; padding: 25px; }
+            .producto-card h3 { font-size: 1.2rem; }
+            .producto-card p { font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="logo2.png" alt="Fúngiko" class="logo-header">
+        <img src="logo2.png" class="logo-header">
         <nav>
             <ul>
                 <li><a href="#">Inicio</a></li>
@@ -100,34 +84,34 @@
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
-        <img src="logo2.png" alt="Fúngiko" class="logo-header">
+        <img src="logo2.png" class="logo-header">
     </header>
 
     <section class="hero">
         <h1>Fúngiko</h1>
-        <p>El mejor <strong>pan de masa madre artesanal </strong>, el alma de Castro en tu mesa.</p>
-        <a href="https://wa.me/56975425779" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Encargar nuestro pan de masa madre</a>
+        <p>El mejor <strong>pan de masa madre artesanal</strong>, el alma de Castro en tu mesa.</p>
+        <a href="https://wa.me/56975425779" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> ¡Encarga tu pan hoy!</a>
     </section>
 
     <section id="nosotros" class="content-section">
         <h2>¿Quiénes somos?</h2>
-        <p style="line-height: 1.8; margin-top: 20px;">
-            Somos dos apasionados por el oficio panadero que, desde nuestra cocina en el corazón de <strong>Castro, Chiloé</strong>, decidimos darle vida a <em>Fúngiko</em>. Nuestra propuesta no es solo vender pan; es rescatar la tradición del <strong>pan de masa madre</strong>. 
-            <br><br>
-            Entendemos que el mejor <strong>pan de masa madre</strong> requiere tres elementos fundamentales: tiempo, ingredientes locales de calidad y una masa madre cuidada con dedicación. Cada día, nuestro proceso honra la paciencia, permitiendo que las levaduras naturales desarrollen sabores complejos en cada <strong>pan de masa madre</strong>, texturas que no solo nutren el cuerpo, sino que también reconfortan el espíritu, conectándonos profundamente con nuestra identidad chilota.
+        <p style="font-size: 0.85rem; text-align: justify; line-height: 1.5; margin-top: 15px;">
+            Somos dos apasionados por el oficio panadero que, desde nuestra cocina en el corazón de Castro, Chiloé, decidimos darle vida a Fúngiko. Nuestra propuesta no es solo vender pan; es rescatar la tradición del pan de masa madre.
+
+Entendemos que el mejor pan de masa madre requiere tres elementos fundamentales: tiempo, ingredientes locales de calidad y una masa madre cuidada con dedicación. Cada día, nuestro proceso honra la paciencia, permitiendo que las levaduras naturales desarrollen sabores complejos en cada pan de masa madre, texturas que no solo nutren el cuerpo, sino que también reconfortan el espíritu, y aromas que evocan recuerdos de hogar y comunidad. En Fúngiko, cada hogaza es un testimonio de nuestra pasión por la panadería artesanal y nuestro compromiso con la excelencia.
         </p>
     </section>
 
     <section id="productos" class="content-section">
-        <h2>Nuestras Variedades de Pan de Masa Madre</h2>
+        <h2>Variedades</h2>
         <div class="contenedor-productos">
             <div class="producto-card">
                 <h3>Masa Madre Integral</h3>
                 <p>Nuestro pan de masa madre integral es elaborado con harinas de grano completo. Su proceso de fermentación prolongado permite una textura rústica y un sabor intenso. Es el mejor pan de masa madre para un desayuno nutritivo.</p>
             </div>
             <div class="producto-card">
-                <h3>Masa Madre Blanca Clásica</h3>
-                <p>La receta de pan de masa madre que respeta la tradición. De corteza crujiente y miga suave, este pan de masa madre es irresistible para acompañar cualquier comida del día en Castro.</p>
+                <h3>Masa Madre Blanca</h3>
+                <p>La receta de pan de masa madre que respeta la tradición. De corteza crujiente y miga suave, este pan de masa madre es irresistible para acompañar cualquier comida del día. </p>
             </div>
         </div>
     </section>
@@ -135,162 +119,17 @@
     <section id="contacto" class="content-section">
         <div class="contacto-card">
             <h2>Contacto</h2>
-            <div class="contacto-info" style="margin-top: 20px;">
-                <p class="contacto-item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/56975425779">+56 9 7542 5779</a></p>
-                <p class="contacto-item"><i class="fas fa-envelope"></i> <a href="mailto:hola@fungiko.cl">hola@fungiko.cl</a></p>
-                <p class="contacto-item"><i class="fab fa-instagram"></i> <a href="https://instagram.com/fungiko.pan" target="_blank">@fungiko.pan</a></p>
-            </div>
+            <p style="font-size: 0.75rem; margin: 10px 0;"><i class="fab fa-whatsapp"></i> +56 9 7542 5779</p>
+            <p style="font-size: 0.75rem;"><i class="fas fa-envelope"></i> hola@fungiko.cl</p>
+            <p style="font-size: 0.75rem; margin-top: 5px;"><a href="https://www.instagram.com/fungiko_/" style="text-decoration:none; color: inherit;"><i class="fab fa-instagram"></i> @fungiko_</a></p>
         </div>
     </section>
 
-    <footer><p>&copy; 2026 Fúngiko - Pan de masa madre, Castro Chiloé.</p></footer>
+    <div class="footer-container">
+        <img src="logo2.png" class="logo-footer">
+        <p class="footer-text">&copy; 2026 Fúngiko. Todos los derechos reservados.</p>
+        <img src="logo2.png" class="logo-footer">
+    </div>
 
-    <div class="cursor"></div>
-
-    <script>
-        const cursor = document.querySelector('.cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-    </script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fúngiko - Pan de Masa Madre Artesanal en Castro</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; overflow-x: hidden; cursor: none; background-color: #faf8f5; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #3e2723; }
-
-        header {
-            position: fixed; top: 0; width: 100%;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 10px 40px; background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(5px); box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000;
-        }
-        .logo-header { max-width: 120px; }
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin: 0 10px; }
-        nav ul li a { 
-            display: block; background: #fff; padding: 10px 20px;
-            border-radius: 20px; text-decoration: none; color: #3e2723;
-            font-weight: bold; border: 1px solid #e0d4c3;
-            transition: all 0.3s ease;
-        }
-        nav ul li a:hover { background: #d84315; color: #fff; transform: translateY(-2px); }
-
-        .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('pan-fondo.png');
-            background-size: cover; background-position: center;
-            height: 100vh; width: 100vw;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; color: #fff;
-        }
-        .hero h1 { font-size: 4rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); } /* Título reducido */
-        .hero p { font-size: 2rem; margin-bottom: 30px; }
-
-        .content-section { max-width: 900px; margin: 40px auto; padding: 60px; text-align: center; }
-        
-        .contenedor-productos { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 30px; gap: 20px; }
-        .producto-card {
-            background: #fff; 
-            border: 2px solid rgb(220, 85, 43); /* MARGEN DE COLOR AGREGADO */
-            border-radius: 12px; 
-            padding: 30px; 
-            width: 45%; 
-            min-width: 280px;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .producto-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 20px rgba(0,0,0,0.15); }
-        
-        .contacto-card {
-            background: #fff; border: 1px solid #e0d4c3; border-radius: 20px;
-            padding: 40px; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            width: 100%; max-width: 600px;
-            border: 2px solid rgb(220, 85, 43);
-        }
-        .contacto-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 20px rgba(0,0,0,0.15); }
-        .contacto-item { margin: 15px 0; font-size: 1.3rem; }
-        
-        .btn-whatsapp { display: inline-block; background-color: #d84315; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 35px; font-weight: bold; transition: transform 0.3s; }
-        .btn-whatsapp:hover { transform: scale(1.1); }
-        
-        footer { background-color: #5d4037; color: #d7ccc8; text-align: center; padding: 30px; }
-        .cursor { width: 20px; height: 20px; border: 2px solid #d84315; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; }
-    </style>
-</head>
-<body>
-
-    <header>
-        <img src="logo2.png" alt="Fúngiko" class="logo-header">
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#nosotros">Quiénes somos</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-        <img src="logo2.png" alt="Fúngiko" class="logo-header">
-    </header>
-
-    <section class="hero">
-        <h1>Fúngiko</h1>
-        <p>El mejor <strong>pan de masa madre artesanal </strong>, el alma de Castro en tu mesa.</p>
-        <a href="https://wa.me/56975425779" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Encargar nuestro pan de masa madre</a>
-    </section>
-
-    <section id="nosotros" class="content-section">
-        <h2>¿Quiénes somos?</h2>
-        <p style="line-height: 1.8; margin-top: 20px;">
-            Somos dos apasionados por el oficio panadero que, desde nuestra cocina en el corazón de <strong>Castro, Chiloé</strong>, decidimos darle vida a <em>Fúngiko</em>. Nuestra propuesta no es solo vender pan; es rescatar la tradición del <strong>pan de masa madre</strong>. 
-            <br><br>
-            Entendemos que el mejor <strong>pan de masa madre</strong> requiere tres elementos fundamentales: tiempo, ingredientes locales de calidad y una masa madre cuidada con dedicación. Cada día, nuestro proceso honra la paciencia, permitiendo que las levaduras naturales desarrollen sabores complejos en cada <strong>pan de masa madre</strong>, texturas que no solo nutren el cuerpo, sino que también reconfortan el espíritu, conectándonos profundamente con nuestra identidad chilota.
-        </p>
-    </section>
-
-    <section id="productos" class="content-section">
-        <h2>Nuestras Variedades de Pan de Masa Madre</h2>
-        <div class="contenedor-productos">
-            <div class="producto-card">
-                <h3>Masa Madre Integral</h3>
-                <p>Nuestro pan de masa madre integral es elaborado con harinas de grano completo. Su proceso de fermentación prolongado permite una textura rústica y un sabor intenso. Es el mejor pan de masa madre para un desayuno nutritivo.</p>
-            </div>
-            <div class="producto-card">
-                <h3>Masa Madre Blanca Clásica</h3>
-                <p>La receta de pan de masa madre que respeta la tradición. De corteza crujiente y miga suave, este pan de masa madre es irresistible para acompañar cualquier comida del día en Castro.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="content-section">
-        <div class="contacto-card">
-            <h2>Contacto</h2>
-            <div class="contacto-info" style="margin-top: 20px;">
-                <p class="contacto-item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/56975425779">+56 9 7542 5779</a></p>
-                <p class="contacto-item"><i class="fas fa-envelope"></i> <a href="mailto:hola@fungiko.cl">hola@fungiko.cl</a></p>
-                <p class="contacto-item"><i class="fab fa-instagram"></i> <a href="https://instagram.com/fungiko.pan" target="_blank">@fungiko.pan</a></p>
-            </div>
-        </div>
-    </section>
-
-    <footer><p>&copy; 2026 Fúngiko - Pan de masa madre, Castro Chiloé.</p></footer>
-
-    <div class="cursor"></div>
-
-    <script>
-        const cursor = document.querySelector('.cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-    </script>
-</body>
->>>>>>> 528cd44d327734bc8c2727077dbb5e9ecc391c7a
 </html>
